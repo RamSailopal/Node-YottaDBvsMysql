@@ -1,0 +1,53 @@
+version: "2"
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: "node_mysql"
+    networks:
+      - node
+    volumes:
+      - "$PWD/mysql:/home/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${nodepass}
+
+  node-mysql:
+    image: ubuntu:focal
+    container_name: "node_node-mysql"
+    networks:
+      - node
+    volumes:
+      - "$PWD/node-mysql:/home/node"
+    ports:
+      - 3002:3000
+    entrypoint:
+      - "/home/node/entrypoint.sh"
+
+  node-yotta:
+   image: docker.io/yottadb/yottadb-base:latest
+   container_name: "node_node-yotta"
+   networks:
+      - node
+   ports:
+      - 3001:3000
+   mem_limit: 1G
+   volumes:
+      - "$PWD/node-yottadb:/home/yottadb"
+   entrypoint: /home/yottadb/entrypoint.sh
+
+  newman:
+   image: ubuntu:focal
+   container_name: "newman"
+   networks:
+     - node
+   volumes:
+     - "$PWD/newman:/home/node"
+   entrypoint:
+     - "/home/node/entrypoint.sh"
+
+ 
+   
+
+networks:
+    node:
+
