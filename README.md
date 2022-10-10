@@ -25,5 +25,5 @@ Mysql - https://htmlpreview.github.io/?https://github.com/RamSailopal/Node-Yotta
 
 A complete (side by side) report - https://htmlpreview.github.io/?https://github.com/RamSailopal/Node-YottaDBvsMysql/blob/main/newman/Complete-report.html
 
-In **summary**, YottaDB **GET** requests are a lot quicker than Mysql taking **6ms** against **36ms** for Mysql. Mysql is quicker with regards to **POST** requests though, registering **313ms** against **448ms** for YottaDB
+In **summary**, YottaDB **GET** requests are a lot quicker than Mysql taking **4ms** against **6ms** for Mysql. It is also quicker with regards to **POST** requests registering **30ms** against **41ms** for Mysql
 
