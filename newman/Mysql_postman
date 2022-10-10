@@ -1,27 +1,43 @@
 {
 	"info": {
-		"_postman_id": "aad3cd24-19b0-40f8-9b12-b1b6ae7812a6",
-		"name": "Mysql",
+		"_postman_id": "a20d72ec-a048-4099-92d5-a89e21307a04",
+		"name": "yotta-nodejs-mysql",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Mysql Post",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "Add new user",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"name\": \"Ram Sailopal\", \"sex\": \"M\", \"age\": \"21\"}",
+					"raw": "{ \"name\": \"Ram Sailopal\", \"sex\": \"M\", \"age\": \"22\"}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
+				"url": {
+					"raw": "node_node-mysql:3000/patients/1",
+					"host": [
+						"node_node-mysql"
+					],
+					"port": "3000",
+					"path": [
+						"patients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [],
 				"url": {
 					"raw": "node_node-mysql:3000/patients",
 					"host": [
@@ -36,18 +52,56 @@
 			"response": []
 		},
 		{
-			"name": "Mysql Get",
+			"name": "Amend user",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"Ram Sailopal\", \"sex\": \"M\", \"age\": \"25\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "node_node-mysql:3000/patients",
+					"raw": "node_node-mysql:3000/patients/1",
 					"host": [
 						"node_node-mysql"
 					],
 					"port": "3000",
 					"path": [
-						"patients"
+						"patients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"Ram Sailopal\", \"sex\": \"M\", \"age\": \"22\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "node_node-mysql:3000/patients/1",
+					"host": [
+						"node_node-mysql"
+					],
+					"port": "3000",
+					"path": [
+						"patients",
+						"1"
 					]
 				}
 			},
